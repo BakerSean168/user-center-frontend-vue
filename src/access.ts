@@ -9,7 +9,7 @@ router.beforeEach((to, from, next) => {
   const loginUserStore = useLoginUserStore()
   const loginUser = loginUserStore.loginUser
   const toUrl = to.fullPath
-  console.log('全局路由守卫', toUrl, loginUser.userRole)
+  // console.log('全局路由守卫', toUrl, loginUser.userRole)
   // 如果是登录或注册页面，直接放行
   if (to.path === '/user/login' || to.path === '/user/register') {
     next()
