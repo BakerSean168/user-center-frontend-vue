@@ -34,6 +34,15 @@ export const getCurrentUser = () => {
   })
 }
 /**
+ * 用户登出
+ */
+export const userLogout = () => {
+  return myAxios({
+    url: '/api/user/logout',
+    method: 'post',
+  })
+}
+/**
  * 获取用户信息
  * @param params
  */

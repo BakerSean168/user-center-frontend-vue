@@ -1,6 +1,6 @@
 <template>
   <div id="userManagePage">
-    <a-input-search style="max-width: 320px; margin-bottom: 20px" v-model:value="searchValue" placeholder="输入用户名搜索"
+    <a-input-search style="max-width: 320px; margin: 20px 50px;" v-model:value="searchValue" placeholder="输入用户名搜索"
       enter-button="搜索" size="large" @search="onSearch" />
     <a-table :columns="columns" :data-source="data">
       <template #bodyCell="{ column, record }">

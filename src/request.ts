@@ -2,12 +2,13 @@ import axios from 'axios'
 
 const myAxios = axios.create({
   // 区分开发和线上环境
-  baseURL: import.meta.env.MODE === 'development'
-      ? "http://localhost:8080"
-      : "http://www.bakersean.cloudns.ch/",
+  baseURL:
+    import.meta.env.MODE === 'development'
+      ? 'http://localhost:8080'
+      : 'http://www.bakersean.cloudns.ch',
   timeout: 10000,
   withCredentials: true,
-});
+})
 
 // Add a request interceptor
 myAxios.interceptors.request.use(

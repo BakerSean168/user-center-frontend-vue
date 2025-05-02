@@ -10,11 +10,17 @@
       <a-col flex="auto">
         <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" @click="navigation" />
       </a-col>
-      <a-col flex="250px">
+      <a-col flex="450px">
         <div v-if="currentUser.username !== '未登录'">
-          <div class="user-login-status">
-            {{ currentUser.username || '还未取名' }}
+          <div class="user-login-status" @click="navigation({ key: '/user/info' })">
+            <div>
+              你好，{{ currentUser.username || '还未取名' }}
+            </div>
+            <div>
+              个人中心
+            </div>
           </div>
+
         </div>
         <div v-else>
           <div class="user-login-status">
@@ -110,6 +116,18 @@ const items = ref<MenuProps['items']>([
   align-items: center;
   padding: 0 16px;
   height: 64px;
+}
+
+.user-login-status {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 16px;
+  cursor: pointer;
+  gap: 30px;
 }
 
 .title {
